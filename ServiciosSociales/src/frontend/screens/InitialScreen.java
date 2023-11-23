@@ -38,7 +38,7 @@ public class InitialScreen extends javax.swing.JFrame {
 
     public InitialScreen() {
         initComponents();
-        this.progressBar1.setColorBG(components.getBackground());
+        this.progressBar1.setColorBG(componentProgress.getBackground());
         this.progressBar1.setColorProgress(Color.WHITE);
         MiSwingWorker wk = new MiSwingWorker(this.progressBar1);
         wk.execute();
@@ -55,41 +55,40 @@ public class InitialScreen extends javax.swing.JFrame {
     private void initComponents() {
 
         components = new javax.swing.JPanel();
-        iconPanel = new javax.swing.JPanel();
-        progressBar1 = new frontend.modelsUI.ProgressBar();
+        titlePanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        progressBar1 = new frontend.modelsUI.ProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setUndecorated(true);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        components.setBackground(new java.awt.Color(50, 127, 239));
+        components.setBackground(new java.awt.Color(255, 255, 255));
         components.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        iconPanel.setBackground(new java.awt.Color(255, 255, 255));
+        titlePanel.setOpaque(false);
+        titlePanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 0, 25));
 
-        javax.swing.GroupLayout iconPanelLayout = new javax.swing.GroupLayout(iconPanel);
-        iconPanel.setLayout(iconPanelLayout);
-        iconPanelLayout.setHorizontalGroup(
-            iconPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/imagenes/icons/icon_servicio_blue_100px.png"))); // NOI18N
+        titlePanel.add(jLabel1);
+
+        components.add(titlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 610, 250));
+        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 434, 530, 10));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(components, javax.swing.GroupLayout.PREFERRED_SIZE, 607, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        iconPanelLayout.setVerticalGroup(
-            iconPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 510, Short.MAX_VALUE)
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(components, javax.swing.GroupLayout.PREFERRED_SIZE, 792, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-
-        components.add(iconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 510));
-        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 1080, 5));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/imagenes/1614676804692.jpg"))); // NOI18N
-        jLabel1.setMaximumSize(new java.awt.Dimension(970, 510));
-        jLabel1.setMinimumSize(new java.awt.Dimension(970, 510));
-        jLabel1.setPreferredSize(new java.awt.Dimension(970, 510));
-        components.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 0, 865, 510));
-
-        getContentPane().add(components, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -132,8 +131,8 @@ public class InitialScreen extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel components;
-    private javax.swing.JPanel iconPanel;
     private javax.swing.JLabel jLabel1;
     private frontend.modelsUI.ProgressBar progressBar1;
+    private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 }
