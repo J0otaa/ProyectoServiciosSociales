@@ -1,3 +1,5 @@
 *\nbproject\*
 /ServiciosSociales/build/
 /ServiciosSociales/dist/
+ServiciosSociales/nbproject/project.properties
+*.properties
