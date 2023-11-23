@@ -1,6 +1,7 @@
 *\nbproject\*
 /ServiciosSociales/build/
 /ServiciosSociales/dist/
-/ServiciosSociales/nbproject/private/private.properties
-/ServiciosSociales/nbproject/private/private.xml
-/ServiciosSociales/nbproject/private/private.properties
+ServiciosSociales/nbproject/project.properties
+*.properties
+ServiciosSociales/nbproject/private/private.properties
+ServiciosSociales/nbproject/private/private.xml

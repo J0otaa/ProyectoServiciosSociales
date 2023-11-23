@@ -35,7 +35,7 @@ public class ModeloDatos {
             //se llama la variable cn que es la instanciada de la base de datos 
             cn.conectarbase();
             //Comando en SQL que selecciona un campo en funcion de lo que tenga
-            //la variable ide
+            //la variable ide de la tabla de datos Servicios_Sociales
             String query = "SELECT * FROM SERVICIOS_SOCIALES WHERE IDENTIFICACION = '" +ide+ "'";
             //Se colocan comillas simples y las comillas dobles en ese orden porque
             //ide es varchar osea que si fuera entero o otro tipo nada mas necesitaria comllas dobles
@@ -89,7 +89,7 @@ public class ModeloDatos {
         {
             try
             {
-                cn.desconectarbase();
+                cn.desconectarbase(); //Desconecta la base de datos
             }
             catch(Exception e)
             {
@@ -104,13 +104,25 @@ public class ModeloDatos {
     {
         try
         {
+            //Conecta la base de datos para su posterior uso
             cn.conectarbase();
+            //Comando que permite seleccionar los campos de un sujeto de acuerdo a 
+            //el sujeto que aparezca que cumpla la condicion del filtro de ide
             String query = "SELECT * FROM Servicios_Sociales WHERE IDENTIFICACION = '"+ide+"'";
+            //El rs guarda el comando anterior para condicionarlo luego y saber 
+            //si el sujeto esta dentro de la base de datos
             ResultSet rs = cn.stmt.executeQuery(query);
+            //Selecciona el primer elemento de la base
             rs.first();
+            //Condiciona si el comando de rs que instancia la tabla de la base 
+            //de datos si es que posee datos
             if (rs != null) {
+                //Condiciona si existen sujetos que posean la misma condicion 
+                //que establece la variable ide
                 if (ide.equals(rs.getString("Identificacion"))) 
                 {
+                    //Establece en los JTextField los valores del sujeto antes 
+                    //encontrado en caso de que haya uno
                     Campo_Nombre.setText(rs.getString("Nombre"));
                     Campo_Direccion.setText(rs.getString("Direccion"));
                     Campo_Monto.setText(rs.getString("Monto"));
@@ -126,7 +138,7 @@ public class ModeloDatos {
         {
             try
             {
-                cn.desconectarbase();
+                cn.desconectarbase(); //Desconecta la base de datos
             }
             catch(Exception e)
             {
