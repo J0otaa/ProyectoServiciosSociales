@@ -39,7 +39,7 @@ public class InitialScreen extends javax.swing.JFrame {
     public InitialScreen() {
         initComponents();
         this.progressBar1.setColorBG(components.getBackground());
-        this.progressBar1.setColorProgress(Color.decode(PrimaryColor));
+        this.progressBar1.setColorProgress(Color.WHITE);
         MiSwingWorker wk = new MiSwingWorker(this.progressBar1);
         wk.execute();
 
@@ -57,40 +57,39 @@ public class InitialScreen extends javax.swing.JFrame {
         components = new javax.swing.JPanel();
         iconPanel = new javax.swing.JPanel();
         progressBar1 = new frontend.modelsUI.ProgressBar();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setAlwaysOnTop(true);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        components.setBackground(new java.awt.Color(255, 255, 255));
+        components.setBackground(new java.awt.Color(50, 127, 239));
         components.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        iconPanel.setOpaque(false);
+        iconPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout iconPanelLayout = new javax.swing.GroupLayout(iconPanel);
         iconPanel.setLayout(iconPanelLayout);
         iconPanelLayout.setHorizontalGroup(
             iconPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         iconPanelLayout.setVerticalGroup(
             iconPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 200, Short.MAX_VALUE)
+            .addGap(0, 510, Short.MAX_VALUE)
         );
 
-        components.add(iconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 560, 200));
-        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 1110, 5));
+        components.add(iconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 510));
+        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 540, 1000, 5));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(components, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(components, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/imagenes/1614676804692.jpg"))); // NOI18N
+        jLabel1.setMaximumSize(new java.awt.Dimension(970, 510));
+        jLabel1.setMinimumSize(new java.awt.Dimension(970, 510));
+        jLabel1.setPreferredSize(new java.awt.Dimension(970, 510));
+        components.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 0, 970, 510));
+
+        getContentPane().add(components, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -134,6 +133,7 @@ public class InitialScreen extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel components;
     private javax.swing.JPanel iconPanel;
+    private javax.swing.JLabel jLabel1;
     private frontend.modelsUI.ProgressBar progressBar1;
     // End of variables declaration//GEN-END:variables
 }
