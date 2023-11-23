@@ -36,7 +36,7 @@ public class ModeloDatos {
             cn.conectarbase();
             //Comando en SQL que selecciona un campo en funcion de lo que tenga
             //la variable ide
-            String query = "SELECT * FROM Servicios_Sociales WHERE Identificacion = '" +ide+ "'";
+            String query = "SELECT * FROM SERVICIOS_SOCIALES WHERE IDENTIFICACION = '" +ide+ "'";
             //Se colocan comillas simples y las comillas dobles en ese orden porque
             //ide es varchar osea que si fuera entero o otro tipo nada mas necesitaria comllas dobles
             
