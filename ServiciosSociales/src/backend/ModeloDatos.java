@@ -44,7 +44,7 @@ public class ModeloDatos {
             //Aqui ejecuta la instruccion en SQL que está almacenada en la variable query
             
             rs.first(); //Ubica primer registro del rs
-            if (rs != null) //Quiere decir que hay datos 
+            if (rs != null) //Si no esta vacio significa que hay datos
             {
                 if (ide.equals(rs.getString("Identificacion"))) {
                     enco = 1; //Asigna 1 a enco porque la identificacion fue encontrada  
