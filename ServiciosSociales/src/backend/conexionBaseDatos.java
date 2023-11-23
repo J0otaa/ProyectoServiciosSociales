@@ -8,7 +8,7 @@ package backend;
 //tablas de la BD
 import java.sql.*;
 
-/*Esta es la clase Conexion_Clase_De_Datos, la cual nos permite hacer conexion 
+/*Esta es la clase conexionBaseDatos, la cual nos permite hacer conexion 
 con la base de datos que es desarrollada en MySQL como motor de BD*/
 
 public class conexionBaseDatos {
