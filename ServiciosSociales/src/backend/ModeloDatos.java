@@ -7,25 +7,24 @@ package backend;
 //Aqui se importa la clase sql con todas sus clases para poder utilizar todos 
 //los comandos de sql que manipulan tablas en las bases de datos
 import java.sql.*;
+//Aqui importamos el objeto JTable,JTextField y JComboBox para poder utilizarlo en esta clase
+//que es de tipo JavaClass y no una clase de tipo JFrame
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
-//Aqui importamos el objeto JTable para poder utilizarlo en esta clase
-//que es de tipo JavaClass y no una clase de tipo JFrame
+
 
 public class ModeloDatos {
     
-//Insttancia la clase Conexion_Base_De_Datos en cn y esto quiere decir que ya 
-    //podemos utilizar los metodos de la clase Conexion_Base_De_Datos
+//Instancia la clase conexionBaseDatos para pueda leer los datos alamcenados en la base de datos    
     conexionBaseDatos cn = new conexionBaseDatos();
     
     //Se definen estas variables de tipo static para poderlas utilizar en todo
-    //el proyecto donde el programador las requiera
-    static String p_Login_Usuario;
-    static String p_Nivel_Usuario;
+    //el proyecto donde se requiera
+    static String pUsuario;
+    static String pCategoria;
     
-    //Funcion para buscar una identificacion de un cliente en la tabla de la
-    //DB
+    //Funcion para buscar una identificacion de un cliente en la tabla de la base de datos
     public int buscaridentificacion(String ide)
     {
         //La variable enco permte controlar si un cliente esta almacenado o no 
@@ -33,13 +32,14 @@ public class ModeloDatos {
         int enco = 0;
         try
         {
+            //se llama la variable cn que es la instanciada de la base de datos 
             cn.conectarbase();
             String query = "SELECT * FROM tabla_clientes WHERE Identificacion = '" +ide+ "'";
             //Se colocan comillas simples y las comillas dobles en ese orden porque
             //ide es varchar osea que si fuera entero o otro tipo nada mas necesitaria comllas dobles
             
-            //La instrucion en query permite seleccionar todos los registros donde
-            //la identificacion sea = ide
+            //Esta instrucion en query permite seleccionar todos los registros donde
+            //la identificacion sea igual a ID
             ResultSet rs = cn.stmt.executeQuery(query);
             //Aqui ejecuta la instruccion en SQL que está almacenada en la variable query
             
@@ -47,11 +47,9 @@ public class ModeloDatos {
             if (rs != null) //Quiere decir que hay datos 
             {
                 if (ide.equals(rs.getString("Identificacion"))) {
-                    enco = 1; //Asigna 1 a enco porque la identificacion fue 
-                    //encontrada  
+                    enco = 1; //Asigna 1 a enco porque la identificacion fue encontrada  
                 }
             }
-            
         }
         //Recordatorio; el catch captura excepciones de algun tipo de error que 
         //no pudo hacer con las instrucciones del try
