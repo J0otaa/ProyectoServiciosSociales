@@ -77,7 +77,7 @@ public class ModeloDatos {
             //dobles porque esta ingresandolo desde fuera de el ambiente
             
             //Comando en SQL que inserta en la tabla Servicios_Sociales
-            String query = "INSERT INTO Servicios_Sociales (IDENTIFICACION,NOMBRE,DIRECCION,MONTO,FECHA) VALUES ('"+ide+"','"+nom+"','"+dire+"','"+mon+"','"+fecha+"')";
+            String query = "INSERT INTO SERVICIOS_SOCIALES (IDENTIFICACION,NOMBRE,DIRECCION,MONTO,FECHA) VALUES ('"+ide+"','"+nom+"','"+dire+"','"+mon+"','"+fecha+"')";
             cn.stmt.execute(query);
             //Aqui ejecuta la instruccion en SQL que está almacenada en query
         }
@@ -99,7 +99,7 @@ public class ModeloDatos {
         return true;
     } //Fin de la función
     
-    //Procedimiento que permite mostrar los datos de un cliente
+    //Procedimiento que permite mostrar los datos de un 
     public void Consultar_Datos(String ide, JTextField Campo_Nombre, JTextField Campo_Direccion, JTextField Campo_Monto, JTextField Campo_Fecha)
     {
         try
