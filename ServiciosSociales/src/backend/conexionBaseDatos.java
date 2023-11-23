@@ -37,13 +37,16 @@ public class conexionBaseDatos {
         {
             //Acceder al driver de conexion con MySQL
             Class.forName("com.mysql.jdbc.Driver");
+            
             //Aqui conecta con la base de datos especificada en el url establecido
             //con los parametros de login y password
             con = DriverManager.getConnection(url, login, password);
+            
             //Permite establecer o crear acciones o comandos sobre las tablas 
             //de la BD que esta activa.
             stmt = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, 
                     ResultSet.CONCUR_READ_ONLY);
+            
             //Si con no es null, quiere decir que la conexión fue exitosa
             if(con != null)
             {

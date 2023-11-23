@@ -70,7 +70,7 @@
         <Component class="frontend.modelsUI.ProgressBar" name="progressBar1">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="540" width="1000" height="5"/>
+              <AbsoluteConstraints x="10" y="544" width="1070" height="0"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -91,7 +91,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="390" y="0" width="970" height="510"/>
+              <AbsoluteConstraints x="220" y="0" width="865" height="510"/>
             </Constraint>
           </Constraints>
         </Component>

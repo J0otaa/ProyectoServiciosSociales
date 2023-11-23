@@ -34,7 +34,9 @@ public class ModeloDatos {
         {
             //se llama la variable cn que es la instanciada de la base de datos 
             cn.conectarbase();
-            String query = "SELECT * FROM tabla_clientes WHERE Identificacion = '" +ide+ "'";
+            //Comando en SQL que selecciona un campo en funcion de lo que tenga
+            //la variable ide
+            String query = "SELECT * FROM SERVICIOS_SOCIALES WHERE IDENTIFICACION = '" +ide+ "'";
             //Se colocan comillas simples y las comillas dobles en ese orden porque
             //ide es varchar osea que si fuera entero o otro tipo nada mas necesitaria comllas dobles
             
@@ -44,8 +46,10 @@ public class ModeloDatos {
             //Aqui ejecuta la instruccion en SQL que está almacenada en la variable query
             
             rs.first(); //Ubica primer registro del rs
-            if (rs != null) //Quiere decir que hay datos 
+            if (rs != null) //Si no esta vacio significa que hay datos
             {
+                //Condición que verifica si la identificacion fue encontrada y 
+                //almacenada en la variable rs
                 if (ide.equals(rs.getString("Identificacion"))) {
                     enco = 1; //Asigna 1 a enco porque la identificacion fue encontrada  
                 }
@@ -71,7 +75,9 @@ public class ModeloDatos {
             //adecuadamente los valores y habran errores
             //Ademas que se necesita poner las comillas simples y las comillas 
             //dobles porque esta ingresandolo desde fuera de el ambiente
-            String query = "INSERT INTO tabla_clientes (IDENTIFICACION,NOMBRE,DIRECCION,MONTO,FECHA) VALUES ('"+ide+"','"+nom+"','"+dire+"','"+mon+"','"+fecha+"')";
+            
+            //Comando en SQL que inserta en la tabla Servicios_Sociales
+            String query = "INSERT INTO SERVICIOS_SOCIALES (IDENTIFICACION,NOMBRE,DIRECCION,MONTO,FECHA) VALUES ('"+ide+"','"+nom+"','"+dire+"','"+mon+"','"+fecha+"')";
             cn.stmt.execute(query);
             //Aqui ejecuta la instruccion en SQL que está almacenada en query
         }
@@ -93,13 +99,13 @@ public class ModeloDatos {
         return true;
     } //Fin de la función
     
-    //Procedimiento que permite mostrar los datos de un cliente
+    //Procedimiento que permite mostrar los datos de un 
     public void Consultar_Datos(String ide, JTextField Campo_Nombre, JTextField Campo_Direccion, JTextField Campo_Monto, JTextField Campo_Fecha)
     {
         try
         {
             cn.conectarbase();
-            String query = "SELECT * FROM TABLA_CLIENTES WHERE IDENTIFICACION = '"+ide+"'";
+            String query = "SELECT * FROM Servicios_Sociales WHERE IDENTIFICACION = '"+ide+"'";
             ResultSet rs = cn.stmt.executeQuery(query);
             rs.first();
             if (rs != null) {
