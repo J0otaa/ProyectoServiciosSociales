@@ -81,7 +81,7 @@ public class InitialScreen extends javax.swing.JFrame {
         );
 
         components.add(iconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 510));
-        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 544, 1070, 0));
+        components.add(progressBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 1080, 5));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/frontend/imagenes/1614676804692.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(970, 510));

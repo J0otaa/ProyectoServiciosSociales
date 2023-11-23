@@ -3,3 +3,5 @@
 /ServiciosSociales/dist/
 ServiciosSociales/nbproject/project.properties
 *.properties
+ServiciosSociales/nbproject/private/private.properties
+ServiciosSociales/nbproject/private/private.xml
